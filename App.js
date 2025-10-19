@@ -1,39 +1,26 @@
-/**
- * 
- * 
- * <div id="parent">
- *         <div id="child">
- *              <h1>I'm h1 tag</h1>
- *              <h2>I'm h1 tag</h2>
- *          </div>
- * <div id="child2">
- *              <h1>I'm h1 tag</h1>
- *              <h2>I'm h1 tag</h2>
- *          </div>
- * </div>
- * 
- * 
- * 
- * 
- * 
- * 
- */
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
-const parent = React.createElement("div", { id: "parent" }, [
-    React.createElement("div", { id: "child" }, [
-        React.createElement("h1", { id: "heading" }, "I'm h1 tag!!"),
-        React.createElement("h2", { id: "heading" }, "I'm an h2 tag!!")
-    ]),
-    React.createElement("div", { id: "child2" }, [
-        React.createElement("h1", { id: "heading" }, "I'm h1 tag!!"),
-        React.createElement("h2", { id: "heading" }, "I'm an h2 tag!!")
-    ])
-]);
 
-const header = React.createElement("h1", { id: "heading" }, "Welcome to React!!");
+// React Element => React.createElement();
+
+// JSX - HTML-like or XML-like syntax
+const TitleComponent = () => <h1 id="heading">Namaste React using JSX </h1>;
+
+// React Functional Component
+
+const HeadingComponent = () => {
+    return (
+        <div id="container"> 
+        <TitleComponent /> 
+        {TitleComponent()}
+        <TitleComponent></TitleComponent>
+        <h2>{100 + 200}</h2>
+        <h1 className='heading'>Namaste React Functional Component!!</h1> 
+        </div>
+        )
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-console.log(parent);
-
-root.render(parent);
+root.render(<HeadingComponent />);
